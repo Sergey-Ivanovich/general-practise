@@ -1,0 +1,191 @@
+@keyframes showNavBar {
+  0% {
+    height: 0px;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0px);
+    height: 18px;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.displayPixel {
+  position: fixed;
+  right: 0px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aqua;
+  transition: all 450ms ease-in-out;
+}
+
+body.turnRed {
+  background-color: red;
+}
+
+html {
+  overscroll-behavior: none;
+}
+
+nav {
+  vertical-align: middle;
+  border-bottom: 2px solid black;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+}
+
+.dropdown-menu ul li {
+  animation: 1s showNavBar alternate;
+  margin-top: 10px;
+  display: list-item;
+}
+
+.dropdown-menu.hidden ul li {
+  animation: 1s showNavBar reverse;
+}
+
+button {
+  vertical-align: middle;
+  border-radius: 10px;
+  padding: 0px 30px;
+  border: 0px;
+  background-color: rgb(220, 218, 218);
+  transition: all 150ms ease-in-out;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+nav h2 {
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+i {
+  font-size: 30px;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+li {
+  opacity: 0.5;
+  padding: 0px;
+  margin: 0px 10px;
+  display: inline;
+}
+
+li:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.show-mobile {
+  display: none;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 20px;
+  }
+
+  nav button {
+    position: relative;
+    right: 40px;
+  }
+
+  .space-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .hide-mobile {
+    display: none;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+}
+
+/* carousel work */
+
+.master-container {
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.carousel-container {
+  vertical-align: middle;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.nav-arrow {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.nav-arrow button {
+  height: 100%;
+  padding: 30px;
+}
+
+.carousel-element {
+  animation: reverse 1s showContent;
+  vertical-align: middle;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid black;
+  display: none;
+}
+
+.carousel-element.show {
+  display: block;
+  animation: 1s showContent both;
+}
