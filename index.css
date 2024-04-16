@@ -141,8 +141,36 @@ li:hover {
     display: none;
   }
 
+  .master-container {
+    padding: 10px 0px !important;
+  }
+
+  .nav-arrow {
+    margin: 10px;
+    opacity: 0.3;
+  }
+
+  .nav-arrow:hover {
+    opacity: 1;
+  }
+
+  .carousel-container {
+    padding: 0px !important;
+  }
+
+  .carousel-element {
+    height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
   .show-mobile {
     display: block;
+  }
+
+  .nav-arrow button {
+    height: 40px !important;
+    padding: 2px 4px !important;
   }
 }
 
@@ -187,5 +215,5 @@ li:hover {
 
 .carousel-element.show {
   display: block;
-  animation: 1s showContent both;
+  animation: 1s showContent;
 }
