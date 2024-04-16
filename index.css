@@ -175,6 +175,10 @@ li:hover {
   .show-mobile {
     display: block;
   }
+
+  .hidden {
+    display: none !important;
+  }
 }
 
 @media (min-width: 900px) {
